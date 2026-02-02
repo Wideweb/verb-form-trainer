@@ -1,0 +1,58 @@
+<div class="page dark">
+  <div class="wrapper">
+  <div class="card">
+    
+    <header>
+      <h1>Verb Form Trainer</h1>
+      <p>Is this verb followed by '-ing' or 'to'?</p>
+    </header>
+
+    <main>
+      <ng-container *ngIf="currentVerb() as verb; else loading">
+        <div class="verb-box">
+          <p>{{ verb.name }}</p>
+        </div>
+
+        <div class="answer-buttons">
+          <button 
+            (click)="selectAnswer('to')"
+            [disabled]="showResult()"
+            class="to">
+            to + infinitive
+          </button>
+          <button 
+            (click)="selectAnswer('ing')"
+            [disabled]="showResult()"
+            class="ing">
+            -ing
+          </button>
+        </div>
+
+        <div *ngIf="showResult()" 
+             class="result"
+             [ngClass]="{ 'correct': isCorrect(), 'incorrect': !isCorrect() }">
+            
+            <ng-container *ngIf="isCorrect(); else incorrect">
+              <p class="text-xl font-bold">Correct! 🎉</p>
+            </ng-container>
+            <ng-template #incorrect>
+              <div>
+                <p class="mt-1">The correct form for '{{ verb.name }}' is '{{ verb.correctForm === 'ing' ? '-ing' : 'to + infinitive' }}'.</p>
+              </div>
+            </ng-template>
+          </div>
+      </ng-container>
+      <ng-template #loading>
+        <p>Loading verbs...</p>
+      </ng-template>
+    </main>
+
+    <footer *ngIf="showResult()">
+        <button (click)="nextVerb()">
+          Next Word &rarr;
+        </button>
+    </footer>
+
+  </div>
+  </div>
+</div>
