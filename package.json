@@ -1,12 +1,11 @@
 {
-  "name": "room-planner",
+  "name": "verb-trainer",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "dev": "ng serve --live-reload false",
     "start": "node server.js",
-    "build": "ng build --configuration production --output-hashing=all",
-    "postinstall": "patch-package"
+    "build": "ng build --configuration production --output-hashing=all"
   },
   "private": true,
   "dependencies": {

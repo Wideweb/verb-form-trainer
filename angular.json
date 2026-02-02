@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "room-planner": {
+    "verb-trainer": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/room-planner",
+            "outputPath": "dist/verb-trainer",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -43,12 +43,7 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [],
               "budgets": [
                 {
                   "type": "initial",
@@ -78,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "room-planner:build:production"
+              "browserTarget": "verb-trainer:build:production"
             },
             "development": {
-              "browserTarget": "room-planner:build:development",
+              "browserTarget": "verb-trainer:build:development",
               "headers": {
                 "Cross-Origin-Opener-Policy": "same-origin-allow-popups"
               }
@@ -92,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "room-planner:build"
+            "browserTarget": "verb-trainer:build"
           }
         },
         "test": {
